@@ -134,22 +134,22 @@ function BossEnemy() {
 //처음 이미지를 로드 해주는 함수
 function loadImge() {
     backgroundImage = new Image();
-    backgroundImage.src = "/image/space.jpg";
+    backgroundImage.src = "./image/space.jpg";
 
     spaceshipImage = new Image();
-    spaceshipImage.src = "/image/spaceship.png";
+    spaceshipImage.src = "./image/spaceship.png";
 
     bulletImage = new Image();
-    bulletImage.src = "/image/bullet25.png";
+    bulletImage.src = "./image/bullet25.png";
 
     gameoverImage = new Image();
-    gameoverImage.src = "/image/gameover.png";
+    gameoverImage.src = "./image/gameover.png";
 
     monsterImage = new Image();
-    monsterImage.src = "/image/monster.png";
+    monsterImage.src = "./image/monster.png";
 
     bossmonsterImage = new Image();
-    bossmonsterImage.src = "/image/bossmonster.png";
+    bossmonsterImage.src = "./image/bossmonster.png";
 }
 
 let keysDown = {};//방향키 담아두는 곳
@@ -168,17 +168,6 @@ function setupkeyboardListener() {
 
         }
     })
-}
-
-//배경 이미지 생성
-
-function creatBackground() {
-    const interval = setInterval(function () {
-        let background = new Background();//배경 생성
-        background.init(); //배경 좌표 생성
-
-
-    }, 5000)//setInte
 }
 
 
