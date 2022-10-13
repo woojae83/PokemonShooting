@@ -25,22 +25,6 @@ document.body.appendChild(canvas)
 spaceshipX = canvas.width - 1436;
 spaceshipY = canvas.height - 130;
 
-let backgroundList = []
-function Background() {
-    this.x = 0;
-    this.y = 0;
-
-    this.init = function () {
-        this.x = 1500;
-        this.y = 0;
-        backgroundList.push(this)
-    }
-    this.update = function () {
-        this.x -= 5;
-
-    };
-
-}
 
 //총알의 좌표값 함수
 let bulletList = [] //총알들을 저장하는 리스트 [x,y,init]
@@ -277,20 +261,12 @@ function update() {
         bossEnemyList[i].update();//보스 계속 생성
 
     }
-    for (let i = 0; i < backgroundList.length; i++) {
-        backgroundList[i].update(); // 배경 화면 움직이게 함
-
-    }
-
-
+    
 }
 
 //이미지 생성하는 함수
 function render() {
     ctx.drawImage(backgroundImage, 0, 0);
-    for (let i = 0; i < backgroundList.length; i++) {
-        ctx.drawImage(backgroundImage, backgroundList[i].x, backgroundList[i].y);
-    }
     ctx.drawImage(spaceshipImage, spaceshipX, spaceshipY);
     ctx.fillText("Score: " + score, 20, 30)
     ctx.fillStyle = "white";
@@ -300,9 +276,7 @@ function render() {
         if (bulletList[i].alive) {
             ctx.drawImage(bulletImage, bulletList[i].x, bulletList[i].y);
         }
-
     }
-
     for (let i = 0; i < enemyList.length; i++) {
         ctx.drawImage(monsterImage, enemyList[i].x, enemyList[i].y);
 
