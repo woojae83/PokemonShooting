@@ -72,16 +72,17 @@ function Bullet() {
     }
     this.checkUpline = function () {
         for (let i = 0; i < bulletList.length; i++) {
-            if (bulletList[i].x <= 0 && bulletList[i].x >= canvas.width + 107) {
-                bulletList.splice(i, 1);//총알이 오른쪽 끝에 도달하면 사라짐
-
+            if (bulletList[i].x <= 0 && bulletList[i].x <= canvas.width-100) {
+                bulletList.splice(i, 1);//총알이 맨 오른쪽에 도달하면 사라짐
             }
         }
     }
 
 
 }
-console.log(bulletList)
+
+
+
 
 function generateRandomValue(min, max) {//적군 랜덤하게 생성
     const randomEnumy = Math.floor(Math.random() * (max - min + 1)) + min
