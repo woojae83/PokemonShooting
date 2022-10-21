@@ -1,5 +1,0 @@
-.requestAnimationFrame: 이미지를 계속해서 불러내는 함수
-.drawimage:
-.createElement:
-.getContext:
-.appendChild:
